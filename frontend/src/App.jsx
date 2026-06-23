@@ -1,5 +1,5 @@
 import { useState } from "react";
-import PipelineView from "./components/PipelineView";
+import PipelineView from "./components/PipelineView.jsx";
 import SchemaOutput from "./components/SchemaOutput";
 import MetricsBar from "./components/MetricsBar";
 import EvalDashboard from "./components/EvalDashboard";
@@ -22,7 +22,7 @@ export default function App() {
     setError(null);
     setResult(null);
     try {
-      const res = await fetch("http://localhost:8000/generate", {
+      const res = await fetch("https://appgen-ai-backend.vercel.app/generate", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ prompt }),
